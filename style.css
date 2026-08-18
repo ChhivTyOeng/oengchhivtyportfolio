@@ -1,5 +1,6 @@
-.profile > img{
-    height: 300px;
-    width: 350px;
-    border-radius: 50px;
+div > img{
+    height: 395px;
+    width: 380px;
+    border-radius: 25px;
+    margin-left: 110px;
 }
