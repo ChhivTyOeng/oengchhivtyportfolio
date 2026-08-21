@@ -1,6 +1,19 @@
-div > img{
-    height: 395px;
-    width: 380px;
-    border-radius: 25px;
-    margin-left: 110px;
+.navbar-toggler {
+  border-radius: 8px;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;               
+  border-color: #555; 
+         
+}
+
+
+/* * image design */
+div > img {
+  height: 395px;
+  width: 380px;
+  border-radius: 25px;
+  margin-left: 110px;
 }
