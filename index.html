@@ -9,18 +9,19 @@
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
-    />
+    /> <!--* CDN Boostrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" /> <!--* CDN ICON-->
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <!-- TODO : Navbar Open -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary p-2 border-light mb-5">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary p-2 border-light mb-5 sticky-top py-3 border border-dark border-opacity-10">
       <div class="container">
         <a class="navbar-brand fw-bold" href="#"
           >Chhiv<span class="text-danger">Ty</span></a
         >
         <button
-          class="navbar-toggler border-1"
+          class="navbar-toggler "
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -53,6 +54,16 @@
               <a class="nav-link" href="#">Contact</a>
             </li>
           </ul>
+          <div class="d-flex align-items-center justify-content-center gap-3 mt-3 mt-lg-0">
+        <!-- Moon / Dark Mode Button -->
+        <button class="btn btn-light rounded-circle border shadow-sm d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+          <i class="bi bi-moon fs-6"></i>
+        </button>
+
+        <!-- Orange Pill Button -->
+        <a href="#contact" class="btn text-white rounded-pill px-3 py-2 fw-semibold d-inline-flex align-items-center gap-2 shadow-sm bg-danger">
+          Hire me <i class="bi bi-arrow-right"></i>
+        </a>
         </div>
       </div>
     </nav>
@@ -125,56 +136,103 @@
     <!-- TODO: Hero Section Close -->
 
     <!-- todo : What I do Services blog -->
-    <article class="container-fluid bg-body-tertiary pt-5 mt-5 mb-5">
-  <div class="container">
-    <p>What I do</p>
-    <h1>Service</h1>
+  <article class="container-fluid bg-body-tertiary py-5 my-5 ">
+  <div class="container py-5 my-2">
+    <p class="text-danger small mb-1">
+      WHAT I DO
+    </p>
+    <h1 class="fw-bolder fs-1 mb-5 text-dark">Services</h1>
 
-    <div class="row">
-      <!-- Card 1 -->
-      <div class="col-lg-4 col-md-6 col-12 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+    <div class="row g-4 mt-4">
+      
+      <!-- Card 1: UI/UX Design (White) -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card bg-white border-0 rounded-4 p-4 h-100 shadow-sm">
+          <div class="d-inline-flex align-items-center justify-content-center bg-danger-subtle text-danger rounded-3 mb-4" style="width: 45px; height: 45px;">
+            <i class="bi bi-display fs-5"></i>
           </div>
+          <h5 class="fw-bold text-dark mb-3">UI/UX Design</h5>
+          <p class="text-secondary small mb-0 lh-base">
+            From wireframes to polished Figma prototypes. Intuitive, visually compelling interfaces that convert visitors into users and put usability first.
+          </p>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="col-lg-4 col-md-6 col-12 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+      <!-- Card 2: Frontend Dev (Dark Active Card) -->
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card bg-dark text-white border-0 rounded-4 p-4 h-100 shadow">
+          <div class="d-inline-flex align-items-center justify-content-center bg-secondary bg-opacity-25 text-danger rounded-3 mb-4" style="width: 45px; height: 45px;">
+            <i class="bi bi-code-slash fs-5"></i>
           </div>
+          <h5 class="fw-bold text-white mb-3">Frontend Dev</h5>
+          <p class="text-white-50 small mb-0 lh-base">
+            Production-grade code with Tailwind CSS and Alpine.js. Pixel-perfect, fully responsive, SEO-friendly and blazing fast — no bloat, no heavy frameworks.
+          </p>
         </div>
       </div>
 
-      <!-- Card 3 -->
-      <div class="col-lg-4 col-md-6 col-12 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-            <a href="#" class="card-link">Card link</a>
-            <a href="#" class="card-link">Another link</a>
+      
+      <div class="col-lg-4 col-md-6 col-12">
+        <div class="card bg-white border-0 rounded-4 p-4 h-100 shadow-sm">
+          <div class="d-inline-flex align-items-center justify-content-center bg-danger-subtle text-danger rounded-3 mb-4" style="width: 45px; height: 45px;">
+            <i class="bi bi-pie-chart fs-5"></i>
           </div>
+          <h5 class="fw-bold text-dark mb-3">Landing Pages</h5>
+          <p class="text-secondary small mb-0 lh-base">
+            High-converting pages for SaaS, apps and personal brands. Designed to communicate value instantly and drive action from the first scroll.
+          </p>
         </div>
       </div>
-    </div> <!-- Row ends here -->
-
+    </div> <!-- ? End Row -->
   </div>
 </article>
-  <!-- todo : What I do Services blog -->
+  <!-- * : What I do Services blog -->
 
+  <!-- TODO: Portfolio-->
+ <section class="container py-5">
+   <div class="d-flex justify-content-between align-items-end mb-5">
+    <p class="text-danger small mb-1">Portfolio</p>
+     <h2 class="fw-bolder display-6">Selected work</h2>
+    <a href="#" class="text-secondary text-decoration-none small fw-medium">All projects &rarr;</a>
+  </div>
+
+  <div class="row g-4">
+    <div class="col-lg-7">
+      <div class="card border-0 shadow-sm rounded-4 h-10">
+        <img class="image-profile" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYpDIhqlNI_PeZRgVPAqxDIm7bOk5-sZkZhnGyE0QtMw&s=10" title="movie-image">
+        <div class="card-body p-4">
+          <div class="mb-3">
+             <span class="badge bg-light text-danger me-2">C++</span>
+             <span class="badge bg-light text-danger me-2">OOP</span>
+          </div>
+          <h4 class="fw-bold">Movie Management — System</h4>
+          <p class="text-secondary lh-lg"> We are students from ANT Training Center, learning to combine creativity and technology.
+                               Our cinema project was built to give everyone a fresh, exciting movie experience.
+                            We believe movies bring people together, inspire imagination, and create lasting memories.
+                            This system is part of our training journey, showing how we apply coding to real projects.
+                                   Thank you for supporting us as we grow and share our passion for cinema!</p>
+          <a href="https://github.com/ChhivTyOeng/C-OOP-ANT-Project.git" class="text-black fw-bold text-decoration-none">View our Project &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Side Cards -->
+    <div class="col-lg-5 d-flex flex-column gap-4">
+      <div class="card border-0 shadow-sm rounded-4 p-4">
+        <h5 class="fw-bold">Up Coming Soon</h5>
+        <p class="text-secondary small">...</p>
+        <a href="#" class="text-dark fw-bold text-decoration-none small">Coming Soon &rarr;</a>
+      </div>
+      <div class="card border-0 shadow-sm rounded-4 p-4">
+        <h5 class="fw-bold">Up Coming Soon</h5>
+        <p class="text-secondary small">...</p>
+        <a href="#" class="text-dark fw-bold text-decoration-none small">Coming Soon &rarr;</a>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- TODO: -->
+  
   </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

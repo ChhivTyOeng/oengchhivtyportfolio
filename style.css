@@ -17,3 +17,9 @@ div > img {
   border-radius: 25px;
   margin-left: 110px;
 }
+
+.image-profile{
+   height: 300;
+   object-fit: cover;
+   width: 530px;
+}
