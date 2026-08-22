@@ -1,25 +1,247 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+:root {
+  --transition-speed: 0.3s;
+}
+
+body {
+  transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+  overflow-x: hidden;
+}
+
+.transition-base {
+  transition: all var(--transition-speed) ease-in-out;
+}
+
 .navbar-toggler {
   border-radius: 8px;
 }
 
 .navbar-toggler:focus {
   outline: none;
-  box-shadow: none;               
-  border-color: #555; 
-         
+  box-shadow: none;           
 }
 
+/* Modern Responsive Image Container System */
+.profile-container {
+  max-width: 380px;
+  width: 100%;
+}
 
-/* * image design */
-div > img {
-  height: 395px;
-  width: 380px;
+.profile-img {
+  height: auto;
+  width: 100%;
+  aspect-ratio: 380 / 395;
   border-radius: 25px;
-  margin-left: 110px;
+  object-fit: cover;
 }
 
-.image-profile{
-   height: 300;
-   object-fit: cover;
-   width: 530px;
+.portfolio-img {
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+@media(min-width: 768px) {
+  .portfolio-img {
+    height: 320px;
+  }
+}
+
+.icon-box {
+  width: 45px;
+  height: 45px;
+  transition: transform var(--transition-speed) ease;
+}
+
+.card:hover .icon-box {
+  transform: translateY(-5px);
+}
+
+/* Smooth Floating Animations matching Folio-Tailwind */
+.hover-card {
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hover-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 1rem 3rem rgba(0,0,0,.08) !important;
+}
+
+.hover-scale {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.04);
+}
+
+.hover-zoom {
+  transition: transform 0.5s ease;
+}
+
+.hover-zoom:hover {
+  transform: scale(1.02);
+}
+
+.hover-zoom-img {
+  transition: transform 0.5s ease;
+}
+
+.hover-card:hover .hover-zoom-img {
+  transform: scale(1.04);
+}
+
+.hover-link {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.hover-link:hover {
+  transform: translateX(4px);
+}
+
+.hover-badge {
+  transition: all 0.2s ease;
+}
+
+.hover-badge:hover {
+  background-color: #dc3545 !important;
+  color: white !important;
+  border-color: #dc3545 !important;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.215, 0.610, 0.355, 1) forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark Mode Rule Overrides */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .bg-body-tertiary {
+  background-color: #1a1a1a !important;
+}
+
+body.dark-mode .card.bg-white {
+  background-color: #1e1e1e !important;
+  color: #e0e0e0;
+}
+
+body.dark-mode .text-dark {
+  color: #f8f9fa !important;
+}
+
+body.dark-mode .navbar {
+  background-color: #1a1a1a !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .navbar-brand,
+body.dark-mode .nav-link {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .border,
+body.dark-mode hr {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-mode .badge.bg-light {
+  background-color: #2a2a2a !important;
+  color: #ff5e3a !important;
+}
+
+body.dark-mode #darkModeToggle {
+  background-color: #2a2a2a !important;
+  color: #ffc107 !important;
+  border-color: #444 !important;
+}
+
+/* Contact Module Configs */
+.contact-container {
+  max-width: 1140px;
+}
+
+.contact-card {
+  background-color: #161617;
+  background-image: radial-gradient(circle at 90% 20%, rgba(249, 87, 33, 0.18), rgba(22, 22, 23, 1) 60%);
+}
+
+.contact-subtitle {
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  color: #ff5e3a !important;
+}
+
+.contact-title {
+  letter-spacing: -1px;
+  line-height: 1.1;
+}
+
+.contact-desc {
+  color: #94969c !important;
+  font-size: 0.95rem;
+  max-width: 380px;
+}
+
+.contact-link {
+  color: #94969c;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: #ffffff;
+}
+
+.contact-link-text {
+  font-size: 0.9rem;
+}
+
+.contact-icon-box {
+  width: 42px;
+  height: 42px;
+  background-color: #242426;
+}
+
+.contact-label {
+  font-size: 0.85rem;
+  color: #a2a4aa;
+}
+
+.contact-input {
+  background-color: #242426 !important;
+  font-size: 0.9rem;
+  color: #ffffff !important;
+}
+
+.contact-input::placeholder {
+  color: #73757d;
+  opacity: 1;
+}
+
+.btn-contact-submit {
+  background-color: red;
+  font-size: 0.95rem;
+}
+
+.btn-contact-submit:hover {
+  background-color: rgb(255, 76, 76);
+  color: #ffffff;
 }
