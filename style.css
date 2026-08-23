@@ -25,7 +25,7 @@ body {
   box-shadow: none;           
 }
 
-/* Modern Responsive Image Container System */
+
 .profile-container {
   max-width: 380px;
   width: 100%;
@@ -61,7 +61,7 @@ body {
   transform: translateY(-5px);
 }
 
-/* Smooth Floating Animations matching Folio-Tailwind */
+
 .hover-card {
   transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -129,7 +129,7 @@ body {
   }
 }
 
-/* Dark Mode Rule Overrides */
+
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
@@ -174,7 +174,7 @@ body.dark-mode #darkModeToggle {
   border-color: #444 !important;
 }
 
-/* Contact Module Configs */
+
 .contact-container {
   max-width: 1140px;
 }
