@@ -6,10 +6,10 @@ const navbarCollapse = document.getElementById('navbarSupportedContent');
 const applyTheme = (isDark) => {
   if (isDark) {
     document.body.classList.add('dark-mode');
-    darkModeIcon.classList.replace('bi-moon', 'bi-sun');
+    if (darkModeIcon) darkModeIcon.classList.replace('bi-moon', 'bi-sun');
   } else {
     document.body.classList.remove('dark-mode');
-    darkModeIcon.classList.replace('bi-sun', 'bi-moon');
+    if (darkModeIcon) darkModeIcon.classList.replace('bi-sun', 'bi-moon');
   }
 };
 
@@ -20,25 +20,27 @@ if (savedTheme === 'dark') {
   applyTheme(false);
 }
 
-darkModeToggle.addEventListener('click', () => {
-  const isDarkMode = document.body.classList.toggle('dark-mode');
-  if (isDarkMode) {
-    localStorage.setItem('theme', 'dark');
-    darkModeIcon.classList.replace('bi-moon', 'bi-sun');
-  } else {
-    localStorage.setItem('theme', 'light');
-    darkModeIcon.classList.replace('bi-sun', 'bi-moon');
-  }
-});
+if (darkModeToggle) {
+  darkModeToggle.addEventListener('click', () => {
+    const isDarkMode = document.body.classList.toggle('dark-mode');
+    if (isDarkMode) {
+      localStorage.setItem('theme', 'dark');
+      if (darkModeIcon) darkModeIcon.classList.replace('bi-moon', 'bi-sun');
+    } else {
+      localStorage.setItem('theme', 'light');
+      if (darkModeIcon) darkModeIcon.classList.replace('bi-sun', 'bi-moon');
+    }
+  });
+}
 
 navLinks.forEach((link) => {
   link.addEventListener('click', (e) => {
     const targetId = link.getAttribute('href');
-    if (targetId.startsWith('#')) {
+    if (targetId && targetId.startsWith('#')) {
       e.preventDefault();
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
-        const navHeight = document.querySelector('.navbar').offsetHeight;
+        const navHeight = document.querySelector('.navbar') ? document.querySelector('.navbar').offsetHeight : 0;
         const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight + 15;
         
         window.scrollTo({
@@ -46,7 +48,7 @@ navLinks.forEach((link) => {
           behavior: 'smooth'
         });
 
-        if (navbarCollapse.classList.contains('show')) {
+        if (navbarCollapse && navbarCollapse.classList.contains('show')) {
           const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
           if (bsCollapse) {
             bsCollapse.hide();
@@ -55,4 +57,20 @@ navLinks.forEach((link) => {
       }
     }
   });
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show');
+    }
+  });
+}, {
+  threshold: 0.12
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('section, .card, .pop-on-scroll').forEach(el => observer.observe(el));
 });
