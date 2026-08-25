@@ -25,7 +25,7 @@ body {
   box-shadow: none;           
 }
 
-/* --- Nav Link Underline Hover Effects --- */
+
 .navbar .nav-link {
   position: relative;
   color: #6c757d;
@@ -156,7 +156,7 @@ body {
   border-color: #dc3545 !important;
 }
 
-/* --- Modern Pop-Up On Scroll & Initial Load --- */
+
 .pop-on-scroll,
 section,
 .card {
@@ -188,7 +188,7 @@ section.show,
   }
 }
 
-/* --- Dark Mode Customization --- */
+/* --- * Dark Mode Customization --- */
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
